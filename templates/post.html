@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Post #{{post[0]}}{% endblock %}
+{% block body %} 
+    <br>
+    <p class="text-center"><a href="/">Home</a></p>
+    <h1 class = "text-center text-primary">{{post[1]}}</h1>
+    <br>
+    <br>
+    <p>{{post[2]}}</p>
+    <br>
+    <p>Publication date: {{post[3]}}</p>
+{% endblock %}

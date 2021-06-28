@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Post{% endblock %}
+{% block body %} 
+    {% from 'form-helper.html' import render_field %}
+    <br>
+    <p class="text-center"><a href="/">Home</a></p>
+    <br>
+    <h2 class="text-center text-success">Add new post</h2>
+    <form action="" method="POST">
+        <br>
+        {{ render_field(form.title, class = "form-control", placeholder = 'Enter title for the post')}}
+        <br>
+        {{ render_field(form.description, class = "form-control", placeholder = 'Enter description for the post')}}
+        <br>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+
+{% endblock %}

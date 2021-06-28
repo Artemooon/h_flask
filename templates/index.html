@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}All Posts{% endblock %}
+{% block body %} 
+    <h1 class = "text-center text-success">All posts</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Date</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delet</th>
+            </tr>
+          </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+            <td>{{post[0]}}</td>
+            <td><a href="/post/{{post[0]}}">{{post[1]}}</a></td>
+            {% if post[2]|length > 30 %}
+            <td>{{post[2][:30]}}... <a href="/post/{{post[0]}}">Full></a></td>
+            {% else %}
+            <td>{{post[2]}}</td>
+            {% endif %}
+            <td>{{post[3]}}</td>
+            <td><a href="/edit-post/{{post[0]}}" class = "btn btn-md btn-info">Edit</a></td>
+            <td>
+                <form action="{{url_for('delete_post', id = post[0])}}">
+                    <input type="hidden" name='method'>
+                    <input type="submit" class = "delete-btn btn btn-danger" value="Delete">
+                </form>
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <a href="/add-post" class="btn btn-success">Add Post</a>
+{% endblock %}
