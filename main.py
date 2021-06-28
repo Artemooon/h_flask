@@ -152,7 +152,7 @@ def post(id):
     # Курсор
     cur = con.cursor()
 
-    # Удаляем пост при помощи кнопки на главной странице
+    # Выбираем пост с определенным id
     cur.execute("SELECT * FROM Posts WHERE id = ?",(id,))
 
     post = cur.fetchone()
