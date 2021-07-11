@@ -7,8 +7,10 @@ COPY . /usr/src/app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
 
 ENV TZ Europe/Kiev
 
-CMD ["python3","main.py"]
+ENV FLASK_ENV=development
+
+
+#CMD ["gunicorn","app:app","-b","0.0.0.0:8000"]
