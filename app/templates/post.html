@@ -3,10 +3,10 @@
 {% block body %} 
     <br>
     <p class="text-center"><a href="/">Home</a></p>
-    <h1 class = "text-center text-primary">{{post[1]}}</h1>
+    <h1 class = "text-center text-primary">{{post.title}}</h1>
     <br>
     <br>
-    <p>{{post[2]}}</p>
+    <p>{{post.body}}</p>
     <br>
-    <p>Publication date: {{post[3]}}</p>
+    <p>Publication date: {{post.date}}</p>
 {% endblock %}
