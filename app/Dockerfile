@@ -7,7 +7,6 @@ COPY . /usr/src/app
 
 RUN pip install -r requirements.txt
 
-
 ENV TZ Europe/Kiev
 
 ENV FLASK_ENV=development

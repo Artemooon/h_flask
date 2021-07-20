@@ -1,0 +1,247 @@
+*{
+  padding:0;
+  margin: 0;
+  font-family:Verdana;
+}
+
+body{
+  background: url("../img/dogs_three_face_eyes_89837_1920x1080.jpg") 0 0/100% 100% no-repeat fixed;
+}
+
+.container{
+	margin:0 auto;
+	max-width: 1200px;
+	width:100%;
+	background-color: white;
+	min-height:100vh;
+  height:100%;
+}
+
+
+.nav_bar{
+    background:#000080;
+    min-height:70px;
+}
+
+.nav_block{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items: center;
+  height:70px;
+}
+
+.nav_block li{
+  list-style-type: none;
+}
+
+.nav_block li a{
+  color:#A52A2A;
+  font-size:20px;
+  font-family:Verdana;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.logo_text a{
+  font-size:25px !important;
+}
+
+.nav_block li a:hover{
+  color:#FF8000;
+  transition: 0.5s;
+}
+
+
+.item_container{
+  margin-top:50px;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  height:auto;
+}
+
+
+.item{
+  width:250px;
+  margin-bottom:40px;
+}
+
+.item img{
+  width:250px;
+  height:250px;
+    transition: 0.3s;
+}
+
+.item img:hover{
+  transform: scale(0.98);
+  transition: 0.3s;
+}
+
+.articles{
+  text-align: center;
+  margin-top:30px;
+  font-size:35px;
+}
+
+.text_item{
+    background: #A52A2A;
+    width:250px;
+    height:100px;
+    margin-top:-5px;
+    text-align: center;
+}
+
+
+.main_item_text{
+  padding-top:20px;
+}
+
+.main_item_text a{
+  text-decoration: none;
+  color:#000080;
+  font-weight:800;
+  transition:.5s;
+}
+
+.main_item_text a:hover{
+  color:#FF8000;
+  transition:.5s;
+}
+
+.publication_date{
+  margin-top:10px;
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+
+.faq_question{
+  margin-top:30px;
+  font-family:serif;
+  text-align: center;
+  font-weight:900;
+  font-size:20px;
+}
+
+.faq_answer{
+  margin-top:5px;
+  max-width: 1150px;
+  margin-left:25px;
+  text-align: center;
+}
+
+
+.form_block{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items:center;
+}
+
+.form_item{
+  width:100%;
+}
+
+.form_item label{
+  margin-left:5%;
+}
+
+.form_item input{
+  width:90%;
+  display: block;
+  margin:10px auto 20px auto;
+  border:none;
+  height:20px;
+  font-size:16px;
+  padding-bottom:5px;
+  border-bottom:1px solid #cccff0;
+}
+
+.form_item select{
+  display: block;
+  margin:10px 0 20px 5%;
+}
+
+.form_item input:focus{
+  outline:none;
+  transition:0.6s;
+  border-color:#A52A2A;
+}
+
+.create_btn{
+  color:#fff;
+  background:#5cb85c;
+  width:150px;
+  height:30px;
+  margin-left:5%;
+  border:1px solid #4cae4c;
+  border-radius:20px;
+  font-size:15px;
+}
+
+.login_btn{
+  color:#fff;
+  background:#337ab7;
+  width:100px;
+  height:30px;
+  margin-left:5%;
+  border:1px solid #2e6da4;
+  border-radius:20px;
+  font-size:15px;
+}
+
+.login_btn:hover{
+  cursor: pointer;
+}
+
+.create_btn:hover{
+  cursor: pointer;
+}
+
+.already_have{
+  margin-left:5%;
+}
+
+.already_have a{
+  text-decoration: none;
+  color:#000080;
+}
+
+.order_btn button{
+    color:#fff;
+    background:#28a745;
+    border:none;
+    border-bottom:#28a745;
+    padding:10px 30px;
+    border-radius:30px;
+    margin-top:15px;
+}
+
+.order_btn button:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width:1150px){
+  .faq_answer{
+    margin-left:0;
+    padding-left:10px;
+    margin-right:10px;
+  }
+}
+
+@media screen and (max-width:720px){
+  .nav_block{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  height:auto;
+}
+.nav_block li{
+  padding-bottom:15px;
+}
+
+}

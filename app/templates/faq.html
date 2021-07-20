@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block title %}All Posts{% endblock %}
+{% block body %}
+    <section>
+      <h2 class = "articles">Часто задаваемые вопросы</h2>
+        {% for faq in faqs %}
+          <div class="faq_question">
+              {{ faq.question }}
+          </div>
+          <div class="faq_answer">
+              {{ faq.answer }}
+          </div>
+        {% endfor %}
+      </section>
+{% endblock %}

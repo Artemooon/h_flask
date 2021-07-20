@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}All Posts{% endblock %}
+{% block body %}
+{% from 'form-helper.html' import render_field %}
+    <section>
+      <h2 class = "articles">Регистрация</h2>
+      <form method = 'POST' action="">
+      <div class="form_block col-lg-6 offset-lg-3">
+        <div class="form_item">
+        {{ render_field(form.username, placeholder = 'Введите имя пользователя')}}
+        </div>
+        <div class="form_item">
+        {{ render_field(form.email, placeholder = 'Введите свою почту')}}
+        </div>
+        <div class="form_item">
+        {{ render_field(form.password, placeholder = 'Введите пароль')}}
+        </div>
+        <div class="form_item">
+        {{ render_field(form.confirm, placeholder = 'Повторите пароль')}}
+        </div>
+        <div class="form_item">
+          <button type="submit" class = "create_btn">Создать аккаунт</button>
+          <br><br>
+          <p class = "already_have"><a href = "/login">Уже есть аккаунт?</a></p>
+        </div>
+      </div>
+      </form>
+    </section>
+{% endblock %}

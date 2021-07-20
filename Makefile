@@ -54,5 +54,8 @@ shell: ## Exec shell
 run-command: ## Run command in shell
 	docker-compose -f $(or $(DOCKER_COMPOSE_FILE), docker-compose.yml) exec app python -c="$(c)"
 
+create-db: ## Create new db
+	docker-compose -f $(or $(DOCKER_COMPOSE_FILE), docker-compose.yml) exec app python manage.py create_db
+
 lint: ## Show images
 	docker-compose -f $(or $(DOCKER_COMPOSE_FILE), docker-compose.yml) exec app sh -c "flake8 $(key) api"
