@@ -1,17 +1,18 @@
+import os
+import random
+import uuid
 from app import app
+from flask import redirect, url_for, request, send_from_directory
 from flask_admin import Admin, form, BaseView, expose, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from .models import db, Post, User, Role, FAQ, likes_users
-from flask_login import LoginManager, current_user
 from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
-from flask import redirect, url_for, request, send_from_directory
+from flask_login import LoginManager, current_user
+from flask_wtf import CSRFProtect
+from slugify import slugify
 from werkzeug.utils import secure_filename
 from wtforms import validators
-from flask_wtf import CSRFProtect
-import os
-import uuid
-import random
-from slugify import slugify
+
+from .models import db, Post, User, Role, FAQ, likes_users
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,15 +23,17 @@ app.config['CKEDITOR_ENABLE_CSRF'] = True
 
 login = LoginManager(app)
 
+
 @login.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
 
+
 ckeditor = CKEditor(app)
 csrf = CSRFProtect(app)
 
-class BlogModelView(ModelView):
 
+class BlogModelView(ModelView):
     create_template = 'admin/edit-post.html'
     edit_template = 'admin/edit-post.html'
 
@@ -39,7 +42,7 @@ class BlogModelView(ModelView):
 
     def inaccessible_callback(self, name, **kwargs):
         # redirect to login page if user doesn't have access
-        return redirect(url_for('login', next=request.url))
+        return redirect(url_for('security.login', next=request.url))
 
     form_overrides = dict(body=CKEditorField)
 
@@ -90,7 +93,7 @@ class RoleModelView(ModelView):
 
     def inaccessible_callback(self, name, **kwargs):
         # redirect to login page if user doesn't have access
-        return redirect(url_for('login', next=request.url))
+        return redirect(url_for('security.login', next=request.url))
 
 
 class UserModelView(ModelView):
@@ -99,16 +102,25 @@ class UserModelView(ModelView):
 
     def inaccessible_callback(self, name, **kwargs):
         # redirect to login page if user doesn't have access
-        return redirect(url_for('login', next=request.url))
+        return redirect(url_for('security.login', next=request.url))
 
 
 class HomeAdminView(AdminIndexView):
     def is_accessible(self):
-        return current_user.is_authenticated and (current_user.has_role('admin')  or current_user.has_role('moder'))
+        return current_user.is_authenticated and (current_user.has_role('admin') or current_user.has_role('moder'))
 
     def inaccessible_callback(self, name, **kwargs):
         # redirect to login page if user doesn't have access
-        return redirect(url_for('login', next=request.url))
+        return redirect(url_for('security.login', next=request.url))
+
+
+class FaqAdminView(ModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated and (current_user.has_role('admin') or current_user.has_role('moder'))
+
+    def inaccessible_callback(self, name, **kwargs):
+        # redirect to login page if user doesn't have access
+        return redirect(url_for('security.login', next=request.url))
 
 
 @app.route('/files/<filename>')
@@ -135,5 +147,5 @@ admin = Admin(app, name='blog', index_view=HomeAdminView(name='Home'), url='/', 
 admin.add_view(BlogModelView(Post, db.session))
 admin.add_view(UserModelView(User, db.session))
 admin.add_view(RoleModelView(Role, db.session))
-admin.add_view(ModelView(FAQ, db.session))
+admin.add_view(FaqAdminView(FAQ, db.session))
 # admin.add_view(ModelView(likes_users, db.session))

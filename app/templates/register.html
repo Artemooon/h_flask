@@ -5,6 +5,7 @@
     <section>
       <h2 class = "articles">Регистрация</h2>
       <form method = 'POST' action="">
+        {{form.hidden_tag()}}
       <div class="form_block col-lg-6 offset-lg-3">
         <div class="form_item">
         {{ render_field(form.username, placeholder = 'Введите имя пользователя')}}

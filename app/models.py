@@ -1,22 +1,22 @@
-from flask_sqlalchemy import SQLAlchemy
-from app import app
 import datetime
+from app import app
 from flask_security import RoleMixin, UserMixin, SQLAlchemyUserDatastore, Security
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import event
 
 db = SQLAlchemy(app)
 
 roles_users = db.Table('roles_users',
-                             db.Column('users_id', db.Integer(),
-                                       db.ForeignKey('users.id')),
-                             db.Column('roles_id', db.Integer(),
-                                       db.ForeignKey('roles.id')))
+                       db.Column('users_id', db.Integer(),
+                                 db.ForeignKey('users.id')),
+                       db.Column('roles_id', db.Integer(),
+                                 db.ForeignKey('roles.id')))
 
 likes_users = db.Table('likes_users',
-                            db.Column('users_id', db.Integer(),
-                                      db.ForeignKey('users.id', ondelete='CASCADE')),
-                            db.Column('posts_id', db.Integer(),
-                                      db.ForeignKey('posts.id', ondelete='CASCADE')))
+                       db.Column('users_id', db.Integer(),
+                                 db.ForeignKey('users.id', ondelete='CASCADE')),
+                       db.Column('posts_id', db.Integer(),
+                                 db.ForeignKey('posts.id', ondelete='CASCADE')))
 
 
 class Role(db.Model, RoleMixin):
@@ -29,6 +29,7 @@ class Role(db.Model, RoleMixin):
     def __repr__(self):
         return '<Role %r>' % self.name
 
+
 class User(db.Model, UserMixin):
     __tablename__ = "users"
 
@@ -39,7 +40,7 @@ class User(db.Model, UserMixin):
     reg_date = db.Column(db.DateTime, default=datetime.datetime.now)
     active = db.Column(db.Boolean())
     roles = db.relationship('Role', secondary=roles_users,
-                           backref=db.backref('roles', passive_deletes=True, lazy='dynamic'))
+                            backref=db.backref('roles', passive_deletes=True, lazy='dynamic'))
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -69,6 +70,4 @@ class Post(db.Model):
     preview_image_url = db.Column(db.Unicode(164), nullable=True)
     active = db.Column(db.Boolean())
     likes = db.relationship('User', secondary=likes_users, remote_side=id,
-                           backref=db.backref('likes', lazy='dynamic'))
-
-
+                            backref=db.backref('likes', lazy='dynamic'))

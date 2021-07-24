@@ -1,11 +1,12 @@
 import os
 
-#sudo lsof -i -P -n | grep 80
+
+# sudo lsof -i -P -n | grep 80
 
 class Config(object):
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "dsduux83zao"
+    SECRET_KEY = "ur_#eadjm(edg$+$uw_=*gxbrb^cavep2cc$ncta%l67&_oj5e"
     SESSION_PERMANENT = False
     SESSION_TYPE = "filesystem"
     FLASK_ADMIN_SWATCH = "cerulean"
