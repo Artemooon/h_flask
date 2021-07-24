@@ -2,114 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="196d2fdc-7c4c-4474-aa07-14f6030950e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.server.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/js/ajax_assets.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/137096956089968032323889158442254188573.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/161260938400293055108679854704469505232.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/222284429138852771686848393163222649373.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/29478573705686354639087048269297259031.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/4763561576365517566994609448044113167.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/64622451882390571562778484018584960358.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/7bb881025820edef645b898fbb76ecdd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/static/uploads/Снимок экрана от 2021-07-14 10-51-17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/dog_attack.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/gold_retriver.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/04s.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/04s.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/107.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/1450610174144420982.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/1453727645_chinese-shar-pei-foto-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/2-щенок гладкошерстной кроличьей таксы.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/20130205161204.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/35214.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/4041845.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/66c46a2059b8c867cece2733f582dad8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/agressioon-koertel-selle-phjused.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/beagle01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/belgiyskaya-ovcharka-41.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/bolonyez.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/depositphotos_81731444-stock-photo-family-petting-golden-retriever-on.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/ds952_1_На чёрном фоне.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/images (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/img.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/img49508858_460720838002300.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/j817898_1330957267.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/j817898_1330957267.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/kavkazskaya_ovcharka.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/leaning-tower-of-pisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/maxresdefault (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/napadenie1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/oQBNQCpDaX4----- (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/ovcharka.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/sao2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/sharpey-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/sobaka.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/taksa-shcenok.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/taksa-shcenok.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/tervuren_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/tmb_89771_4215 (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/tmb_89771_4215.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/unnamed.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/unnamed.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/x_3f290431.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/img/yRSseWU_oo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/labrador.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/mops.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/pizan_boloniez.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/sharpey.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/taxa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/articles/vid_ovcharki.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/faq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/04s.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/1101026.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/1101026.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/1380565708.png" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/1380565708.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/9e2339f3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/9e2339f3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/anniepaddington.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/anniepaddington.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/dogs_three_face_eyes_89837_1920x1080.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/dogs_three_face_eyes_89837_1920x1080.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/j817898_1330957267.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/photo_2020-04-09_21-29-26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/photo_2020-04-09_21-29-26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/taksa-shcenok.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/unnamed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/img/vznyxms7hokhtye600g7_1577359250.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/images/vznyxms7hokhtye600g7_1577359250.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/adult-all-breeds-dogs-lamb-500x500.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/legkij-step-legkoe-govjazhe-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/mjach-dlja-sobak-gigwi-g-ball-gigvi-2sht-6sm-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/puppy-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/ring_1-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/ring_3-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/slays_packproduct-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/sobachij-gipnoz-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/wolfsblut_black-bird_small-breed-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/wolfsblut_gold-fields_adult-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/img/wolfsblut_trofu_cold-river-500x500.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/market/order_payment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/styles/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/styles/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/styles/article_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/styles/article_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Final Work/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/static/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/admins.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/admins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/styles/article_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/styles/article_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin/edit-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/edit-post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/favorite-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/favorite-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/default.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +158,7 @@
       <workItem from="1626986907502" duration="4588000" />
       <workItem from="1627029460054" duration="2942000" />
       <workItem from="1627051112160" duration="15214000" />
-      <workItem from="1627117682991" duration="21255000" />
+      <workItem from="1627117682991" duration="22017000" />
     </task>
     <servers />
   </component>

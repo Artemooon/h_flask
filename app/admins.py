@@ -7,6 +7,7 @@ from flask_ckeditor import CKEditor, CKEditorField, upload_fail, upload_success
 from flask import redirect, url_for, request, send_from_directory
 from werkzeug.utils import secure_filename
 from wtforms import validators
+from flask_wtf import CSRFProtect
 import os
 import uuid
 import random
@@ -17,6 +18,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['PREVIEW_UPLOAD_PATH'] = os.path.join(basedir, 'static/images/')
 app.config['IMAGES_UPLOAD_PATH'] = os.path.join(basedir, 'static/images/articles')
 app.config['CKEDITOR_FILE_UPLOADER'] = 'upload'
+app.config['CKEDITOR_ENABLE_CSRF'] = True
 
 login = LoginManager(app)
 
@@ -25,7 +27,7 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 ckeditor = CKEditor(app)
-
+csrf = CSRFProtect(app)
 
 class BlogModelView(ModelView):
 
