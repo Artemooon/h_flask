@@ -9,16 +9,16 @@ from flask_security import login_user, current_user, logout_user, login_required
 
 @app.route('/')
 def index():
-    all_posts = Post.query.all()
+    all_posts = Post.query.filter_by(active=True).all()
 
     return render_template('index.html', posts=all_posts, current_user=current_user)
 
 
 @app.route('/<string:slug>/favorite/', methods=(['GET']))
 def favorite_articles(slug):
-    user = User.query.filter_by(username=slug).first_or_404()
-    posts = Post.query.first_or_404()
-    return render_template('favorite-user.html', posts=None)
+
+    return render_template('favorite-user.html')
+
 
 @app.route('/article/<string:slug>/like/', methods=(['POST', 'GET']))
 def like_post(slug):

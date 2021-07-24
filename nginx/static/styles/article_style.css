@@ -142,12 +142,6 @@ a.lightbox-close:after {
     transform:rotate(-45deg);
 } */
 
-.comment_block{
-  max-width: 30%;
-  width:100%;
-  margin-left:4%;
-}
-
 
 .lightbox-target:target {
 opacity: 1;

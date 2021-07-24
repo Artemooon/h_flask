@@ -10,10 +10,11 @@ login_manager.init_app(app)
 
 Session(app)
 
-
-
+from app import config
 from app import admins
 from app import views
-from app import config
 from app import models
+from app import tests
 
+# if __name__ == "__main__":
+#     app.run(debug=False)

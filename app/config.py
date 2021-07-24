@@ -1,5 +1,6 @@
 import os
 
+#sudo lsof -i -P -n | grep 80
 
 class Config(object):
     SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
@@ -10,4 +11,7 @@ class Config(object):
     FLASK_ADMIN_SWATCH = "cerulean"
     SECURITY_PASSWORD_SALT = "dshas23csa"
     SECURITY_PASSWORD_HASH = 'bcrypt'
+    CKEDITOR_HEIGHT = 550
+    CKEDITOR_FILE_UPLOADER = 'upload'
+    # UPLOADED_PATH = os.path.join(basedir, 'uploads')
     # SECURITY_LOGIN_USER_TEMPLATE = "login.html"

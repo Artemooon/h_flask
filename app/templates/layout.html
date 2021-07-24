@@ -14,9 +14,9 @@
         <div class="nav_bar">
           <ul class = "nav_block">
               <li><h2 class = "logo_text"><a href="/">Собачий блог</a></h2></li>
-            <li><a href="about.html">О нас</a></li>
+<!--            <li><a href="about.html">О нас</a></li>-->
             <li><a href="/faqs">F.A.Q</a></li>
-              {% if current_user.is_authenticated and current_user.has_role('admin') %}
+              {% if current_user.is_authenticated and (current_user.has_role('admin') or current_user.has_role('moder')) %}
                 <li><a href="/admin">Admin</a></li>
               {% endif %}
               {% if current_user.is_authenticated %}

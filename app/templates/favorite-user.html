@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 {% block title %}Любимые статьи {{current_user.username}}{% endblock %}
 {% block body %}
-    <h2 class = "title_text">Любимые статьи</h2>
+    <h2 class = "title_text">Любимые статьи {{current_user.username}}</h2>
 <div class="item_container">
             {% for post in current_user.likes %}
             <div class="item">
               <a href="{{ url_for('.post', slug=post.slug) }}">
-                <img src="/static/images/{{post.pic_url}}" alt="">
+                <img src="/static/images/{{post.preview_image_url}}" alt="">
               </a>
                 <div class="text_item">
                   <h4 class = "main_item_text"><a href="{{ url_for('.post', slug=post.slug) }}">{{post.title}}</a></h4>

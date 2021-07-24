@@ -2,7 +2,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app import app
 import datetime
 from flask_security import RoleMixin, UserMixin, SQLAlchemyUserDatastore, Security
-
+from sqlalchemy import event
 
 db = SQLAlchemy(app)
 
@@ -56,6 +56,7 @@ class FAQ(db.Model):
     question = db.Column(db.String(200), nullable=False)
     answer = db.Column(db.Text(), nullable=False)
 
+
 class Post(db.Model):
     __tablename__ = "posts"
 
@@ -65,14 +66,9 @@ class Post(db.Model):
     date = db.Column(db.DateTime, default=datetime.datetime.now)
     author = db.Column(db.String(60), nullable=False)
     slug = db.Column(db.String(120))
-    pic_url = db.Column(db.String(150), nullable=False)
+    preview_image_url = db.Column(db.Unicode(164), nullable=True)
+    active = db.Column(db.Boolean())
     likes = db.relationship('User', secondary=likes_users, remote_side=id,
                            backref=db.backref('likes', lazy='dynamic'))
 
-    def __init__(self, *args, **kwargs):
-        if not 'slug' in kwargs:
-            kwargs['slug'] = slugify(kwargs.get('title', ''))
-        super().__init__(*args, **kwargs)
 
-    def __repr__(self):
-        return '<Post %r>' % self.title
