@@ -1,12 +1,77 @@
-{% extends 'base.html' %}
-{% block title %}Post #{{post[0]}}{% endblock %}
-{% block body %} 
+{% extends 'layout.html' %}
+{% block title %}All Posts{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'styles/article_style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <section>
+    <h1 class = "title_text">{{post.title}}</h1>
+         <div class="info_block">
+        <p class = "author">Автор: {{ post.author }}</p>
+        <p class = "date">Дата публикации: {{ post.date }}</p>
+    </div>
     <br>
-    <p class="text-center"><a href="/">Home</a></p>
-    <h1 class = "text-center text-primary">{{post.title}}</h1>
-    <br>
-    <br>
-    <p>{{post.body}}</p>
-    <br>
-    <p>Publication date: {{post.date}}</p>
+      <div class="text_block text-center">
+        {{ post.body | safe }}
+      </div>
+        <hr>
+        <div class="like_block">
+            {% if current_user.is_authenticated %}
+            <form method = "POST" action="{{post.slug}}/like/">
+                <button class = "like" id = "like_btn" type = "button" name = "like_id" value = "{{ post.id }}"><i class="fa fa-heart {% if is_liked %}liked_article{% endif %}"></i></button>
+                <span class = "total_likes"> {{total_likes}}</span>
+            </form>
+            {% else %}
+            <form method = "POST" action="{{post.slug}}/like/">
+                <button class = "like" type = "button" disabled name = "like_id" value = "{{ post.id }}"><i class="fa fa-heart {% if is_liked %}liked_article{% endif %}"></i></button>
+                <span class = "total_likes"> {{total_likes}}</span>
+            </form>
+            {% endif %}
+        </div>
+<!--        <div class="comment_block">-->
+<!--            <form id = "comment_form" method="POST">-->
+<!--            <h3 class = "comments_text pb-2 ml-5">Comments ({{comments_len}})</h3>-->
+
+<!--            {% if current_user.is_authenticated %}-->
+<!--            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
+<!--            <button class = "btn btn-primary mt-4 ml-5" id = "submit_btn" name = "addComment" value = "addComment" type = "button">Send</button>-->
+<!--            {% else %}-->
+<!--            <textarea class = "commentField" id = "MainField" name = "commentField" placeholder="Log in to write a comment"></textarea>-->
+<!--            <button class = "btn btn-primary mt-4 ml-5" id = "submit_btn" name = "addComment" value = "addComment" type = "button" disabled title = "Log in to write a comment">Send</button>-->
+<!--            {% endif %}-->
+<!--        </form>-->
+<!--        </div>-->
+    </section>
+
+
+  <script>
+      $(document).ready(function() {
+
+          $('body').on('click', '#like_btn', function (event) {
+              event.preventDefault();
+              var data_id = $(this).attr('value');
+              $.ajax({
+                  type: 'POST',
+                  url: '{{post.slug}}/like/',
+                  data: {
+                      id: data_id,
+                  },
+                  success: function (data) {
+                      $('.total_likes').html(data['total_likes']);
+                      if(data['is_liked'] == true){
+                           $('#like_btn i').addClass('liked_article')
+
+                      }
+                      else{
+                          $('#like_btn i').removeClass('liked_article')
+                      }
+                      $('#like_btn').attr('value', data_id);
+                  },
+                  error: function (data) {
+                      console.log("error");
+                  }
+              });
+          });
+      });
+    </script>
+
 {% endblock %}

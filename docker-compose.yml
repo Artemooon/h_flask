@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: app/Dockerfile
-    command: python manage.py run -h 0.0.0.0 -p 8000
+    command: bash -c "python3 manage.py run -h 0.0.0.0 -p 8000 && python3 manage.py createdb && python3 manage.py createsuperuser"
     volumes:
       - ./:/usr/src/app/
     env_file:

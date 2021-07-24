@@ -1,12 +1,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.venv
+.venv/
 
 # Flask stuff:
 instance/
 .webassets-cache
-flask_session
+
+flask_session/
 .idea/
 
 .env
