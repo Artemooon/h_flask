@@ -2,18 +2,15 @@ version: "3.3"
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: app/Dockerfile
+    image: artemooon/flask_blog:latest
     command:  bash -c "gunicorn app:app -b 0.0.0.0:8000"
-    env_file: .env
-#    environment:
-#      DB_NAME=${DB_NAME}
-#      DB_USERNAME=${DB_USERNAME}
-#      DB_PASS=${DB_PASS}
-#      DATABASE_URL=${DATABASE_URL}
-#      FLASK_APP=manage.py
-#      SUPERUSER_PASS=${SUPERUSER_PASS}
+    environment:
+      DB_NAME=${DB_NAME}
+      DB_USERNAME=${DB_USERNAME}
+      DB_PASS=${DB_PASS}
+      DATABASE_URL=${DATABASE_URL}
+      FLASK_APP=manage.py
+      SUPERUSER_PASS=${SUPERUSER_PASS}
     depends_on:
       - db
 
