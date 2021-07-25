@@ -5,9 +5,9 @@ name: Blog Flask
 
 on:
   push:
-    branches: [ master,feature-* ]
+    branches: [ master,feature-*,flask-ci ]
   pull_request:
-    branches: [ master ]
+    branches: [ master,flask-ci ]
 
 jobs:
   build:
