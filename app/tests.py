@@ -2,6 +2,7 @@ import unittest
 # import flaskr
 from app import app
 
+
 # app = Flask(__name__)
 
 class BaseTestCase(unittest.TestCase):

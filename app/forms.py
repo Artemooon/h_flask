@@ -1,4 +1,5 @@
-from wtforms import Form, StringField, PasswordField, validators
+from flask_wtf import Form
+from wtforms import StringField, PasswordField, validators
 
 
 # Форма регистрации

@@ -1,10 +1,11 @@
-from app import app
-from .models import db, Post, User, FAQ, user_datastore
-from .forms import RegisterForm, LoginForm
 import datetime
+from app import app
 from flask import request, render_template, redirect, flash, url_for, jsonify
-from flask_security.utils import hash_password
 from flask_security import login_user, current_user, logout_user, login_required
+from flask_security.utils import hash_password
+
+from .forms import RegisterForm, LoginForm
+from .models import db, Post, User, FAQ, user_datastore
 
 
 @app.route('/')
@@ -16,7 +17,6 @@ def index():
 
 @app.route('/<string:slug>/favorite/', methods=(['GET']))
 def favorite_articles(slug):
-
     return render_template('favorite-user.html')
 
 
@@ -52,7 +52,6 @@ def post(slug):
     return render_template('post.html', post=post, is_liked=is_liked, total_likes=total_likes)
 
 
-
 @app.route('/faqs', methods=['GET'])
 def faq():
     faq = FAQ.query.all()
@@ -60,54 +59,22 @@ def faq():
     return render_template('faq.html', faqs=faq)
 
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm(request.form)
-    if request.method == 'POST':
-        username = request.form['username']
-        user_password = request.form['password']
-
-        result = User.query.filter(username == username).first()
-
-        if result:
-            password = result.password
-
-            if sha256_crypt.verify(user_password, password):
-                login_user(result)
-
-                flash('Вы вошли!!', 'success')
-                return redirect('/')
-
-            else:
-                flash('Неправильный лоигн или пароль', 'danger')
-
-        else:
-            flash('Такой пользователь не найден', 'warning')
-
-    return render_template('login.html', form=form)
-
-
-@app.route('/logout', methods=['GET'])
-@login_required
-def logout():
-    logout_user()
-    return redirect('/login')
-
-
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['POST', 'GET'])
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        email = request.form['email']
-        username = request.form['username']
-        result = User.query.filter(email == email).first()
-        if not result.exists():
-            flash("This username or email is already registered!!!!!!!!", 'warning')
-            username = form.username.data
-            if username == result.username or email == result.email:
-                flash("This username or email is already registered!", 'warning')
 
-                return redirect(url_for('register'))
+        username_val = request.form['username']
+        result = User.query.filter_by(username=username_val).first()
+        if result and username_val == result.username:
+            flash("This username is already registered!", 'warning')
+            return redirect(url_for('register'))
+
+        email = request.form['email']
+        result = User.query.filter_by(email=email).first()
+        if result and email == result.email:
+            flash("This email is already registered!", 'warning')
+            return redirect(url_for('register'))
 
         else:
             username = form.username.data
@@ -117,8 +84,8 @@ def register():
             user_datastore.create_user(username=username, email=email, password=password)
             db.session.commit()
 
-            flash('Вы успешно зарегестрировались. Теперь вы можете войти', 'success')
+            return redirect(url_for('security.login'))
 
-            return redirect(url_for('login'))
+            flash('Вы успешно зарегестрировались. Теперь вы можете войти', 'success')
 
     return render_template('register.html', form=form)
