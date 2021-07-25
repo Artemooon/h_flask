@@ -5,11 +5,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <section>
     <h1 class = "title_text">{{post.title}}</h1>
+        <br>
          <div class="info_block">
         <p class = "author">Автор: {{ post.author }}</p>
         <p class = "date">Дата публикации: {{ post.date }}</p>
     </div>
-    <br>
+    <br><br>
       <div class="text_block text-center">
         {{ post.body | safe }}
       </div>
@@ -17,6 +18,7 @@
         <div class="like_block">
             {% if current_user.is_authenticated %}
             <form method = "POST" action="{{post.slug}}/like/">
+                <input type="hidden" id = "csrf_token_val" name="csrf_token" value="{{ csrf_token() }}" />
                 <button class = "like" id = "like_btn" type = "button" name = "like_id" value = "{{ post.id }}"><i class="fa fa-heart {% if is_liked %}liked_article{% endif %}"></i></button>
                 <span class = "total_likes"> {{total_likes}}</span>
             </form>
@@ -49,11 +51,18 @@
           $('body').on('click', '#like_btn', function (event) {
               event.preventDefault();
               var data_id = $(this).attr('value');
+              var csrftoken = $('#csrf_token_val').attr('value');
               $.ajax({
                   type: 'POST',
                   url: '{{post.slug}}/like/',
                   data: {
                       id: data_id,
+                      csrftoken: csrftoken
+                  },
+                  beforeSend: function(xhr, settings) {
+                      if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                          xhr.setRequestHeader("X-CSRFToken", csrftoken)
+                      }
                   },
                   success: function (data) {
                       $('.total_likes').html(data['total_likes']);

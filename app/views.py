@@ -17,7 +17,10 @@ def index():
 
 @app.route('/<string:slug>/favorite/', methods=(['GET']))
 def favorite_articles(slug):
-    return render_template('favorite-user.html')
+
+    all_favorite_posts = Post.query.join(User.likes).filter(User.id == current_user.id).all()
+
+    return render_template('favorite-user.html', all_favorite_posts=all_favorite_posts)
 
 
 @app.route('/article/<string:slug>/like/', methods=(['POST', 'GET']))

@@ -13,3 +13,5 @@ flask_session/
 .env
 postgres-data/
 db/
+
+images/
